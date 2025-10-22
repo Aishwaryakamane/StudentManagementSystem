@@ -25,12 +25,18 @@ public class StudentManagementRecorde {
             sc.nextLine();
 
             switch (choice) {
-                case 1 -> addStudent();
-                case 2 -> viewStudent();
-                case 3 -> updateStudent();
-                case 4 -> deleteStudent();
-                case 5 -> System.out.println("Exiting...");
-                default -> System.out.println("Invalid Choice. Try again");
+                case 1 :
+                    addStudent();
+                    break;
+                case 2 : viewStudent();
+                    break;
+                case 3 : updateStudent();
+                    break;
+                case 4 : deleteStudent();
+                    break;
+                case 5 : System.out.println("Exiting...");
+                   break;
+                default : System.out.println("Invalid Choice. Try again");
             }
 
         } while (choice != 5);
@@ -39,7 +45,7 @@ public class StudentManagementRecorde {
     private static void addStudent() {
         int id;
         while (true) {
-            System.out.print("Enter Student ID (positive integer): ");
+            System.out.print("Enter Student ID : ");
             if (sc.hasNextInt()) {
                 id = sc.nextInt();
                 sc.nextLine();
@@ -53,7 +59,7 @@ public class StudentManagementRecorde {
 
         String name;
         while (true) {
-            System.out.print("Enter Name (letters only): ");
+            System.out.print("Enter new Name : ");
             name = sc.nextLine();
             if (name.matches("[a-zA-Z ]+")) break;
             else System.out.println("Invalid name. Use letters only.");
@@ -61,7 +67,7 @@ public class StudentManagementRecorde {
 
         double marks;
         while (true) {
-            System.out.print("Enter Marks (0–100): ");
+            System.out.print("Enter new Marks : ");
             if (sc.hasNextDouble()) {
                 marks = sc.nextDouble();
                 if (marks >= 0 && marks <= 100) break;
